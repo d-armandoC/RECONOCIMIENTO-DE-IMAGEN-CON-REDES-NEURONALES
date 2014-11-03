@@ -12,20 +12,17 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author Diego C
  */
 public class ProcesamientoImagen {
-
     //Imagen actual que se ha cargado
     private BufferedImage imageActual;
     public static String url;
-
     //Método que devuelve una imagen abierta desde archivo
     //Retorna un objeto BufferedImagen
-
     public BufferedImage abrirImagen() {
         //Creamos la variable que será devuelta (la creamos como null)
         BufferedImage bmp = null;
         //Creamos un nuevo cuadro de diálogo para seleccionar imagen
         JFileChooser selector = new JFileChooser();
-        selector.setCurrentDirectory(new File("D:\\Veronica C\\Desktop\\ChimboVeronica\\ReconocimientodePersonas\\src\\img\\"));
+        selector.setCurrentDirectory(new File("D:\\Diego C\\Documents\\NetBeansProjects\\ReconocerImagen\\src\\img\\"));
         //Le damos un título
         selector.setDialogTitle("Seleccione una imagen");
         //Filtramos los tipos de archivos
@@ -40,9 +37,7 @@ public class ProcesamientoImagen {
                 File imagenSeleccionada = selector.getSelectedFile();
                 url = imagenSeleccionada.getPath();
                 //Asignamos a la variable bmp la imagen leida
-
                 bmp = ImageIO.read(imagenSeleccionada);
-
             } catch (Exception e) {
             }
 
